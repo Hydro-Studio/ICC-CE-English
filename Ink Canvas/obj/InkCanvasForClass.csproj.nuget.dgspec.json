@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ICC CE\\ICC CE main\\ICC-CE\\Ink Canvas\\InkCanvasForClass.csproj": {}
+    "D:\\Hydrogen\\Documents\\ICC-CE-English\\Ink Canvas\\InkCanvasForClass.csproj": {}
   },
   "projects": {
-    "E:\\ICC CE\\ICC CE main\\ICC-CE\\Ink Canvas\\InkCanvasForClass.csproj": {
+    "D:\\Hydrogen\\Documents\\ICC-CE-English\\Ink Canvas\\InkCanvasForClass.csproj": {
       "version": "5.0.4",
       "restore": {
-        "projectUniqueName": "E:\\ICC CE\\ICC CE main\\ICC-CE\\Ink Canvas\\InkCanvasForClass.csproj",
+        "projectUniqueName": "D:\\Hydrogen\\Documents\\ICC-CE-English\\Ink Canvas\\InkCanvasForClass.csproj",
         "projectName": "InkCanvasForClass",
-        "projectPath": "E:\\ICC CE\\ICC CE main\\ICC-CE\\Ink Canvas\\InkCanvasForClass.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "E:\\ICC CE\\ICC CE main\\ICC-CE\\Ink Canvas\\obj\\",
+        "projectPath": "D:\\Hydrogen\\Documents\\ICC-CE-English\\Ink Canvas\\InkCanvasForClass.csproj",
+        "packagesPath": "C:\\Users\\Hydrogen\\.nuget\\packages\\",
+        "outputPath": "D:\\Hydrogen\\Documents\\ICC-CE-English\\Ink Canvas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Hydrogen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -83,7 +83,7 @@
               "version": "[0.9.27, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
