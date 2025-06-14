@@ -203,11 +203,9 @@ namespace Ink_Canvas {
                     BtnExit.Background = new SolidColorBrush(StringToColor("#7F909090"));
                 } else {
                     //Light
-                    BtnExit.Background = BtnSwitchTheme.Content.ToString() == "深色"
+                    BtnExit.Background = BtnSwitchTheme.Content.ToString() == "Dark"
                         ? new SolidColorBrush(StringToColor("#FFCCCCCC"))
-                        :
-                        //Dark
-                        new SolidColorBrush(StringToColor("#FF555555"));
+                        : new SolidColorBrush(StringToColor("#FF555555"));
                 }
 
                 ComboBoxFloatingBarImg.SelectedIndex = Settings.Appearance.FloatingBarImg;

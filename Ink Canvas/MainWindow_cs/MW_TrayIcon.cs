@@ -34,7 +34,7 @@ namespace Ink_Canvas
                 if (mainWin.isFloatingBarFolded) {
                     FoldFloatingBarTrayIconMenuItemIconEyeOff.Visibility = Visibility.Hidden;
                     FoldFloatingBarTrayIconMenuItemIconEyeOn.Visibility = Visibility.Visible;
-                    FoldFloatingBarTrayIconMenuItemHeaderText.Text = "退出收纳模式";
+                    FoldFloatingBarTrayIconMenuItemHeaderText.Text = "Exit Fold Mode";
                     if (!HideICCMainWindowTrayIconMenuItem.IsChecked) {
                         ResetFloatingBarPositionTrayIconMenuItem.IsEnabled = false;
                         ResetFloatingBarPositionTrayIconMenuItem.Opacity = 0.5;
@@ -42,7 +42,7 @@ namespace Ink_Canvas
                 } else {
                     FoldFloatingBarTrayIconMenuItemIconEyeOff.Visibility = Visibility.Visible;
                     FoldFloatingBarTrayIconMenuItemIconEyeOn.Visibility = Visibility.Hidden;
-                    FoldFloatingBarTrayIconMenuItemHeaderText.Text = "切换为收纳模式";
+                    FoldFloatingBarTrayIconMenuItemHeaderText.Text = "Switch to Fold Mode";
                     if (!HideICCMainWindowTrayIconMenuItem.IsChecked) {
                         ResetFloatingBarPositionTrayIconMenuItem.IsEnabled = true;
                         ResetFloatingBarPositionTrayIconMenuItem.Opacity = 1;

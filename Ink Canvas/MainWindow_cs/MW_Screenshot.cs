@@ -65,7 +65,7 @@ namespace Ink_Canvas {
                     catch (Exception fallbackEx) {
                         // 最终错误处理
                         if (!isHideNotification) {
-                            ShowNotification($"截图保存失败: {fallbackEx.Message}");
+                            ShowNotification($"Screenshot save failed: {fallbackEx.Message}");
                         }
                         return;
                     }
@@ -74,7 +74,7 @@ namespace Ink_Canvas {
             
             if (!isHideNotification) {
                 try {
-                    ShowNotification($"截图成功保存至 {savePath}");
+                    ShowNotification($"Screenshot successfully saved to {savePath}");
                 }
                 catch {
                     // 防止通知系统自身异常导致崩溃

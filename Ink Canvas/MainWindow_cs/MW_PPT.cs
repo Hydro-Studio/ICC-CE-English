@@ -77,7 +77,7 @@ namespace Ink_Canvas {
                 RightBottomPanelForPPTNavigation.Visibility = Visibility.Collapsed;
                 LeftSidePanelForPPTNavigation.Visibility = Visibility.Collapsed;
                 RightSidePanelForPPTNavigation.Visibility = Visibility.Collapsed;
-                MessageBox.Show("未找到幻灯片");
+                MessageBox.Show("Slide not found");
             }
         }
 
@@ -295,7 +295,7 @@ namespace Ink_Canvas {
                     if (!int.TryParse(File.ReadAllText(folderPath + "/Position"), out var page)) return;
                     if (page <= 0) return;
                     
-                    new YesOrNoNotificationWindow($"上次播放到了第 {page} 页, 是否立即跳转", () => {
+                    new YesOrNoNotificationWindow($"Last playback reached page {page}, jump immediately?", () => {
                         if (pptApplication.SlideShowWindows.Count >= 1)
                             // 如果已经播放了的话, 跳转
                             presentation.SlideShowWindow.View.GotoSlide(page);
@@ -321,8 +321,7 @@ namespace Ink_Canvas {
                 Application.Current.Dispatcher.BeginInvoke(new Action(() => {
                     if (isHaveHiddenSlide && !IsShowingRestoreHiddenSlidesWindow) {
                         IsShowingRestoreHiddenSlidesWindow = true;
-                        new YesOrNoNotificationWindow("检测到此演示文档中包含隐藏的幻灯片，是否取消隐藏？",
-                            () => {
+                        new YesOrNoNotificationWindow("Hidden slides detected in this presentation document, cancel hiding?", () => {
                                 foreach (Slide slide in slides)
                                     if (slide.SlideShowTransition.Hidden ==
                                         Microsoft.Office.Core.MsoTriState.msoTrue)
@@ -353,7 +352,7 @@ namespace Ink_Canvas {
                     Application.Current.Dispatcher.BeginInvoke((Action)(() => {
                         if (hasSlideTimings && !IsShowingAutoplaySlidesWindow) {
                             IsShowingAutoplaySlidesWindow = true;
-                            new YesOrNoNotificationWindow("检测到此演示文档中自动播放或排练计时已经启用，可能导致幻灯片自动翻页，是否取消？",
+                            new YesOrNoNotificationWindow("Detected automatic playback or rehearsal timing enabled in this presentation document, which may cause the slide to change automatically. Do you want to cancel?",
                                 () => {
                                     presentation.SlideShowSettings.AdvanceMode =
                                         PpSlideShowAdvanceMode.ppSlideShowManualAdvance;

@@ -140,45 +140,45 @@ namespace Ink_Canvas {
 
                     if (arg.Contains("EasiNote")) {
                         Dispatcher.Invoke(() => {
-                            ShowNotification("“希沃白板 5”已自动关闭");
+                            ShowNotification("'EasiNote Whiteboard 5' has been automatically closed");
                         });
                     }
 
                     if (arg.Contains("HiteAnnotation")) {
                         Dispatcher.Invoke(() => {
-                            ShowNotification("“鸿合屏幕书写”已自动关闭");
+                            ShowNotification("'HiteAnnotation' has been automatically closed");
                         });
                     }
 
                     if (arg.Contains("Ink Canvas Annotation") || arg.Contains("Ink Canvas Artistry")) {
                         Dispatcher.Invoke(() => {
-                            ShowNewMessage("“ICA”已自动关闭");
+                            ShowNewMessage("'ICA' has been automatically closed");
                         });
                     }
 
                     if (arg.Contains("\"Ink Canvas.exe\"")) {
                         Dispatcher.Invoke(() => {
-                            ShowNotification("“Ink Canvas”已自动关闭");
+                            ShowNotification("'Ink Canvas' has been automatically closed");
                         });
                     }
 
                     if (arg.Contains("Inkeys")) {
                         Dispatcher.Invoke(() => {
-                            ShowNotification("“智绘教Inkeys”已自动关闭");
+                            ShowNotification("'Inkeys' has been automatically closed");
                         });
                     }
 
                     if (arg.Contains("VcomTeach"))
                     {
                         Dispatcher.Invoke(() => {
-                            ShowNotification("“优教授课端”已自动关闭");
+                            ShowNotification("'VcomTeach' has been automatically closed");
                         });
                     }
 
                     if (arg.Contains("DesktopAnnotation"))
                     {
                         Dispatcher.Invoke(() => {
-                            ShowNotification("“希沃桌面2.0 桌面批注”已自动关闭");
+                            ShowNotification("'EasiNote Desktop Annotation 2.0' has been automatically closed");
                         });
                     }
                 }
@@ -260,7 +260,7 @@ namespace Ink_Canvas {
                            ForegroundWindowInfo.WindowRect().Width >= SystemParameters.WorkArea.Width - 16) {
                     if (!unfoldFloatingBarByUser && !isFloatingBarFolded) FoldFloatingBar_MouseUp(null, null);
                     // AdmoxWhiteboard
-                } else if (Settings.Automation.IsAutoFoldInAdmoxWhiteboard && windowProcessName == "Amdox.WhiteBoard" &&
+                } else if (Settings.Automation.IsAutoFoldInAdmoxWhiteboard && windowProcessName == "Amdox.White.Board" &&
                            ForegroundWindowInfo.WindowRect().Height >= SystemParameters.WorkArea.Height - 16 &&
                            ForegroundWindowInfo.WindowRect().Width >= SystemParameters.WorkArea.Width - 16) {
                     if (!unfoldFloatingBarByUser && !isFloatingBarFolded) FoldFloatingBar_MouseUp(null, null);

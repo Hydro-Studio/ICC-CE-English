@@ -61,19 +61,19 @@ namespace Ink_Canvas {
                         }
                     }
                     catch (Exception fallbackEx) {
-                        ShowNotification($"墨迹保存失败: {fallbackEx.Message}");
+                        ShowNotification($"Stroke save failed: {fallbackEx.Message}");
                         return;
                     }
                 }
                 catch (Exception ex) {
-                    ShowNotification($"墨迹保存失败: {ex.Message}");
+                    ShowNotification($"Stroke save failed: {ex.Message}");
                     return;
                 }
 
-                if (newNotice) ShowNotification("墨迹成功保存至 " + savePathWithName);
+                if (newNotice) ShowNotification("Stroke successfully saved to " + savePathWithName);
             }
             catch (Exception ex) {
-                ShowNotification("墨迹保存失败");
+                ShowNotification("Stroke save failed");
                 LogHelper.WriteLogToFile("墨迹保存失败 | " + ex.ToString(), LogHelper.LogType.Error);
             }
         }
@@ -115,7 +115,7 @@ namespace Ink_Canvas {
                 if (inkCanvas.Visibility != Visibility.Visible) SymbolIconCursor_Click(sender, null);
             }
             catch {
-                ShowNotification("墨迹打开失败");
+                ShowNotification("Stroke open failed");
             }
         }
     }

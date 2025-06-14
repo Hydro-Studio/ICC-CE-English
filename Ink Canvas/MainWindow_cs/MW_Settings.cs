@@ -1146,7 +1146,7 @@ namespace Ink_Canvas {
             if (!isLoaded) return;
             Settings.Automation.IsAutoSaveStrokesAtScreenshot = ToggleSwitchAutoSaveStrokesAtScreenshot.IsOn;
             ToggleSwitchAutoSaveStrokesAtClear.Header =
-                ToggleSwitchAutoSaveStrokesAtScreenshot.IsOn ? "清屏时自动截图并保存墨迹" : "清屏时自动截图";
+                ToggleSwitchAutoSaveStrokesAtScreenshot.IsOn ? "Automatically screenshot and save strokes when clearing screen" : "Automatically screenshot when clearing screen";
             SaveSettingsToFile();
         }
 

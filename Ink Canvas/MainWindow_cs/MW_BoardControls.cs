@@ -171,8 +171,8 @@ namespace Ink_Canvas {
             bool isMaxPage = WhiteboardTotalCount >= 99;
 
             // 设置按钮文本
-            BtnLeftWhiteBoardSwitchNextLabel.Text = isLastPage ? "新页面" : "下一页";
-            BtnRightWhiteBoardSwitchNextLabel.Text = isLastPage ? "新页面" : "下一页";
+            BtnLeftWhiteBoardSwitchNextLabel.Text = isLastPage ? "New Page" : "Next Page";
+            BtnRightWhiteBoardSwitchNextLabel.Text = isLastPage ? "New Page" : "Next Page";
 
             // 始终允许点击“下一页/新页面”按钮（除非已达最大页数）
             BtnWhiteBoardSwitchNext.IsEnabled = !isMaxPage;
