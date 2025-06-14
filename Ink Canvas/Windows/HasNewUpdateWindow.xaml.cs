@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 namespace Ink_Canvas
 {
     /// <summary>
-    /// HasNewUpdateWindow.xaml 的交互逻辑
+    /// Interaction logic for HasNewUpdateWindow.xaml
     /// </summary>
     /// 
 

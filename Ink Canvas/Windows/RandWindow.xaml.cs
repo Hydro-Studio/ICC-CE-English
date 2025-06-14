@@ -193,7 +193,7 @@ namespace Ink_Canvas {
                 TextBlockPeopleCount.Text = PeopleCount.ToString();
                 if (PeopleCount == 0) {
                     PeopleCount = 60;
-                    TextBlockPeopleCount.Text = "点击此处以导入名单";
+                    TextBlockPeopleCount.Text = "Click here to import name list";
                 }
             }
         }
@@ -215,9 +215,9 @@ namespace Ink_Canvas {
             if (isIslandCallerFirstClick)
             {
                 MessageBox.Show(
-                    "首次使用ClassIsland点名功能，请确保已安装ClassIsland和Island caller插件。\n" +
-                    "如未安装，请前往官网下载并安装后再使用。如果安装请再次点击此按钮。",
-                    "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+                    "First time using ClassIsland roll call feature, please ensure ClassIsland and Island caller plugin are installed.\n" +
+                    "If not installed, please download and install from the official website before using. If installed, please click this button again.",
+                    "Notice", MessageBoxButton.OK, MessageBoxImage.Information);
                 isIslandCallerFirstClick = false;
                 return;
             }
@@ -232,7 +232,7 @@ namespace Ink_Canvas {
             }
             catch (Exception ex)
             {
-                MessageBox.Show("无法调用外部点名：" + ex.Message);
+                MessageBox.Show("Unable to call external roll call: " + ex.Message);
             }
         }
     }

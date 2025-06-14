@@ -30,7 +30,7 @@ namespace Ink_Canvas
         {
             if (originText != TextBoxNames.Text)
             {
-                var result = MessageBox.Show("是否保存？", "名单导入", MessageBoxButton.YesNo);
+                var result = MessageBox.Show("Do you want to save?", "Import Names", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
                     File.WriteAllText(App.RootPath + "Names.txt", TextBoxNames.Text);

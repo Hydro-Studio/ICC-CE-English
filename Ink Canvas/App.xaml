@@ -14,7 +14,7 @@
                 <MenuItem IsCheckable="True" IsChecked="False" Checked="HideICCMainWindowTrayIconMenuItem_Checked" Unchecked="HideICCMainWindowTrayIconMenuItem_UnChecked" Name="HideICCMainWindowTrayIconMenuItem">
                     <MenuItem.Header>
                         <ui:SimpleStackPanel Orientation="Horizontal" Margin="-4,0,0,0">
-                            <TextBlock Name="HideICCMainWindowTrayIconMenuItemHeaderText" FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="隐藏ICC主窗口" />
+                            <TextBlock Name="HideICCMainWindowTrayIconMenuItemHeaderText" FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="Hide ICC Main Window" />
                         </ui:SimpleStackPanel>
                     </MenuItem.Header>
                     <MenuItem.Icon>
@@ -35,7 +35,7 @@
                 <MenuItem>
                     <MenuItem.Header>
                         <ui:SimpleStackPanel Orientation="Horizontal" Margin="-4,0,0,0">
-                            <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="禁用所有快捷键" />
+                            <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="Disable All Shortcuts" />
                         </ui:SimpleStackPanel>
                     </MenuItem.Header>
                     <MenuItem.Icon>
@@ -55,7 +55,7 @@
                 <MenuItem Name="ForceFullScreenTrayIconMenuItem" Click="ForceFullScreenTrayIconMenuItem_Clicked">
                     <MenuItem.Header>
                         <ui:SimpleStackPanel Orientation="Horizontal" Margin="-4,0,0,0">
-                            <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="强制全屏化" />
+                            <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="Force Fullscreen" />
                             <ui:SimpleStackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4" Margin="16,0,0,0">
                                 <Border Padding="4,2,4,1" Background="#e4e4e7" BorderBrush="#a1a1aa" BorderThickness="1" CornerRadius="2.5">
                                     <TextBlock FontSize="8" Foreground="#3f3f46" FontWeight="Bold" Text="CTRL" />
@@ -88,7 +88,7 @@
                 <MenuItem Name="FoldFloatingBarTrayIconMenuItem" Click="FoldFloatingBarTrayIconMenuItem_Clicked">
                     <MenuItem.Header>
                         <ui:SimpleStackPanel Orientation="Horizontal" Margin="-4,0,0,0">
-                            <TextBlock Name="FoldFloatingBarTrayIconMenuItemHeaderText" FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="切换为收纳模式" />
+                            <TextBlock Name="FoldFloatingBarTrayIconMenuItemHeaderText" FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="Switch to Storage Mode" />
                             <ui:SimpleStackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4" Margin="16,0,0,0">
                                 <Border Padding="4,2,4,1" Background="#e4e4e7" BorderBrush="#a1a1aa" BorderThickness="1" CornerRadius="2.5">
                                     <TextBlock FontSize="8" Foreground="#3f3f46" FontWeight="Bold" Text="CTRL" />
@@ -133,7 +133,7 @@
                 <MenuItem Name="ResetFloatingBarPositionTrayIconMenuItem" Click="ResetFloatingBarPositionTrayIconMenuItem_Clicked">
                     <MenuItem.Header>
                         <ui:SimpleStackPanel Orientation="Horizontal" Margin="-4,0,0,0">
-                            <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="重置工具栏位置" />
+                            <TextBlock FontSize="14" VerticalAlignment="Center" Foreground="#18181b" Text="Reset Toolbar Position" />
                             <ui:SimpleStackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4" Margin="16,0,0,0">
                                 <Border  Padding="4,2,4,1" Background="#e4e4e7" BorderBrush="#a1a1aa" BorderThickness="1" CornerRadius="2.5">
                                     <TextBlock FontSize="8" Foreground="#3f3f46" FontWeight="Bold" Text="CTRL" />
@@ -164,7 +164,7 @@
                 <MenuItem Name="RestartAppTrayIconMenuItem" Click="RestartAppTrayIconMenuItem_Clicked">
                     <MenuItem.Header>
                         <ui:SimpleStackPanel Orientation="Horizontal" Margin="-4,0,0,0">
-                            <TextBlock FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Foreground="#2563eb" Text="重启软件" />
+                            <TextBlock FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Foreground="#2563eb" Text="Restart Software" />
                             <ui:SimpleStackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4" Margin="16,0,0,0">
                                 <Border  Padding="4,2,4,1" Background="#e4e4e7" BorderBrush="#a1a1aa" BorderThickness="1" CornerRadius="2.5">
                                     <TextBlock FontSize="8" Foreground="#3f3f46" FontWeight="Bold" Text="CTRL" />
@@ -196,7 +196,7 @@
                 <MenuItem Name="CloseAppTrayIconMenuItem" Click="CloseAppTrayIconMenuItem_Clicked">
                     <MenuItem.Header>
                         <ui:SimpleStackPanel Orientation="Horizontal" Margin="-4,0,0,0">
-                            <TextBlock FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Foreground="#dc2626" Text="退出软件" />
+                            <TextBlock FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Foreground="#dc2626" Text="Exit Software" />
                             <ui:SimpleStackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="4" Margin="16,0,0,0">
                                 <Border  Padding="4,2,4,1" Background="#e4e4e7" BorderBrush="#a1a1aa" BorderThickness="1" CornerRadius="2.5">
                                     <TextBlock FontSize="8" Foreground="#3f3f46" FontWeight="Bold" Text="CTRL" />

@@ -8,7 +8,7 @@
         ui:ThemeManager.RequestedTheme="Light" Topmost="True" Background="Transparent"
         mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True" Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
-        Title="Ink Canvas 抽奖" Height="500" Width="900">
+        Title="Ink Canvas Lucky Draw" Height="500" Width="900">
     <Border Background="#F0F3F9" CornerRadius="10" BorderThickness="1" BorderBrush="#0066BF" Margin="0" ClipToBounds="True">
         <Canvas>
             <Image Source="/Resources/hatsune-miku1.png" Width="300" Canvas.Bottom="-140" Canvas.Left="-48" Canvas.Top="304"></Image>
@@ -76,10 +76,10 @@
                     </StackPanel>
                     <ui:SimpleStackPanel Visibility="Collapsed" Margin="0,8,0,0" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="24">
                         <CheckBox x:Name="NoHotStudents" MinWidth="0"
-                                  Content="不抽热门人选" IsThreeState="True"
+                                  Content="Don't draw popular candidates" IsThreeState="True"
                                   HorizontalAlignment="Center" />
                         <CheckBox x:Name="NoShengPiZi" MinWidth="0"
-                                  Content="避开生僻字" IsThreeState="True"
+                                  Content="Avoid rare characters" IsThreeState="True"
                                   HorizontalAlignment="Center" />
                     </ui:SimpleStackPanel>
                     <ui:SimpleStackPanel Visibility="Collapsed"  Margin="0,0,0,8" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="24">
@@ -88,9 +88,9 @@
                                   IsEditable="False"
                                   SelectedIndex="0"
                                   IsReadOnly="True">
-                            <ComboBoxItem>全都抽</ComboBoxItem>
-                            <ComboBoxItem>只抽男</ComboBoxItem>
-                            <ComboBoxItem>只抽女</ComboBoxItem>
+                            <ComboBoxItem>Draw All</ComboBoxItem>
+                            <ComboBoxItem>Draw Males Only</ComboBoxItem>
+                            <ComboBoxItem>Draw Females Only</ComboBoxItem>
                         </ComboBox>
                     </ui:SimpleStackPanel>
                     <Border x:Name="BorderBtnRand" MouseUp="BorderBtnRand_MouseUp" Background="#0066BF" Height="70" Width="200" CornerRadius="35">
@@ -98,7 +98,7 @@
                             <Viewbox Margin="0,20">
                                 <ui:SymbolIcon Name="SymbolIconStart" Symbol="Contact" Foreground="White"/>
                             </Viewbox>
-                            <TextBlock Text="开抽" Foreground="White" FontSize="32" Margin="-1,-1,4,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="Start Draw" Foreground="White" FontSize="32" Margin="-1,-1,4,0" VerticalAlignment="Center"/>
                         </ui:SimpleStackPanel>
                     </Border>
                     <Border x:Name="BorderBtnIslandCaller" MouseUp="BorderBtnIslandCaller_MouseUp" Background="#00B894" Height="50" Width="200" CornerRadius="25" Margin="0,16,0,0">
@@ -106,7 +106,7 @@
                             <Viewbox Margin="0,10">
                                 <ui:SymbolIcon Symbol="Globe" Foreground="White"/>
                             </Viewbox>
-                            <TextBlock Text="ClassIsland点名" Foreground="White" FontSize="18" Margin="-1,-1,4,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="ClassIsland Roll Call" Foreground="White" FontSize="18" Margin="-1,-1,4,0" VerticalAlignment="Center"/>
                         </ui:SimpleStackPanel>
                     </Border>
                 </ui:SimpleStackPanel>
@@ -119,7 +119,7 @@
                     <Viewbox Margin="15,12">
                         <ui:SymbolIcon Symbol="People" Foreground="Black"/>
                     </Viewbox>
-                    <TextBlock Margin="-5,12,15,12" Name="TextBlockPeopleCount" Text="点击此处以导入名单" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Margin="-5,12,15,12" Name="TextBlockPeopleCount" Text="Click here to import name list" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </ui:SimpleStackPanel>
             </Border>
             <Border UseLayoutRounding="True" Canvas.Bottom="8" Canvas.Right="8" x:Name="BtnClose" MouseUp="BtnClose_MouseUp" HorizontalAlignment="Right" VerticalAlignment="{Binding ElementName=BorderBtnHelp, Path=VerticalAlignment}" Margin="10" Grid.Column="1" Background="#E32A34" Height="40" Width="40" CornerRadius="100">

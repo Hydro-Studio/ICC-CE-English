@@ -6,7 +6,7 @@ using System.Windows.Media;
 namespace Ink_Canvas.ProcessBars
 {
     /// <summary>
-    /// CycleProcessBar1.xaml 的交互逻辑
+    /// Interaction logic for CycleProcessBar1.xaml
     /// </summary>
     public partial class CycleProcessBar : UserControl
     {
@@ -58,35 +58,46 @@ namespace Ink_Canvas.ProcessBars
             set { SetValue(value); }
         }
 
-        /// <summary>
-        /// 设置百分百，输入小数，自动乘100
-        /// </summary>
-        /// <param name="percentValue"></param>
-        private void SetValue(double percentValue)
+        public static readonly DependencyProperty PercentValueProperty =
+            DependencyProperty.Register("PercentValue", typeof(double), typeof(CycleProcessBar), new PropertyMetadata(0.0, OnPercentValueChanged));
+
+        public double PercentValue
         {
-            /*****************************************
-              方形矩阵边长为34，半长为17
-              环形半径为14，所以距离边框3个像素
-              环形描边3个像素
+            get { return (double)GetValue(PercentValueProperty); }
+            set { SetValue(PercentValueProperty, value); }
+        }
+
+        private static void OnPercentValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (CycleProcessBar)d;
+            control.UpdateProgress();
+        }
+
+        private void UpdateProgress()
+        {
+            double percentValue = PercentValue;
+            if (percentValue > 1) percentValue = 1;
+            if (percentValue < 0) percentValue = 0;
+
+            /******************************************
+            Square matrix side length is 34, half length is 17
+            Ring radius is 14, so 3 pixels from the border
+            Ring stroke is 3 pixels
             ******************************************/
-            double angel = percentValue * 360; //角度
+            double angel = percentValue * 360; // angle
 
-            double radius = 14; //环形半径
+            double radius = 14; // ring radius
 
-            //起始点
-            double leftStart = 17;
-            double topStart = 3;
+            // starting point
+            double startX = 17 + radius * Math.Cos(0);
+            double startY = 17 + radius * Math.Sin(0);
 
-            //结束点
-            double endLeft = 0;
-            double endTop = 0;
+            // ending point
+            double endX = 17 + radius * Math.Cos(angel * Math.PI / 180);
+            double endY = 17 + radius * Math.Sin(angel * Math.PI / 180);
 
-            if (percentValue == 0) myCycleProcessBar.Visibility = Visibility.Hidden;
-            else myCycleProcessBar.Visibility = Visibility.Visible;
-
-
-            //数字显示
-            lbValue.Content = (percentValue * 100).ToString("0") + "%";
+            // number display
+            TextBlockPercent.Text = (percentValue * 100).ToString("F0") + "%";
 
             /***********************************************
             * 整个环形进度条使用Path来绘制，采用三角函数来计算
@@ -107,9 +118,9 @@ namespace Ink_Canvas.ProcessBars
                           *
                           *
                 ******************/
-                double ra = (90 - angel) * Math.PI / 180; //弧度
-                endLeft = leftStart + Math.Cos(ra) * radius; //余弦横坐标
-                endTop = topStart + radius - Math.Sin(ra) * radius; //正弦纵坐标
+                double ra = (90 - angel) * Math.PI / 180; // radians
+                endX = 17 + Math.Cos(ra) * radius; // cosine x-coordinate
+                endY = 17 + radius - Math.Sin(ra) * radius; // sine y-coordinate
             }
 
             else if (angel <= 180)
@@ -124,9 +135,9 @@ namespace Ink_Canvas.ProcessBars
                           *   *
                 ******************/
 
-                double ra = (angel - 90) * Math.PI / 180; //弧度
-                endLeft = leftStart + Math.Cos(ra) * radius; //余弦横坐标
-                endTop = topStart + radius + Math.Sin(ra) * radius;//正弦纵坐标
+                double ra = (angel - 90) * Math.PI / 180; // radians
+                endX = 17 + Math.Cos(ra) * radius; // cosine x-coordinate
+                endY = 17 + radius + Math.Sin(ra) * radius; // sine y-coordinate
             }
 
             else if (angel <= 270)
@@ -140,10 +151,10 @@ namespace Ink_Canvas.ProcessBars
                        *ra*
                       *   *
                 ******************/
-                isLagreCircle = true; //优势弧
+                isLagreCircle = true; // major arc
                 double ra = (angel - 180) * Math.PI / 180;
-                endLeft = leftStart - Math.Sin(ra) * radius;
-                endTop = topStart + radius + Math.Cos(ra) * radius;
+                endX = 17 - Math.Sin(ra) * radius;
+                endY = 17 + radius + Math.Cos(ra) * radius;
             }
 
             else if (angel < 360)
@@ -157,44 +168,44 @@ namespace Ink_Canvas.ProcessBars
                           *
                           *
                 ******************/
-                isLagreCircle = true; //优势弧
+                isLagreCircle = true; // major arc
                 double ra = (angel - 270) * Math.PI / 180;
-                endLeft = leftStart - Math.Cos(ra) * radius;
-                endTop = topStart + radius - Math.Sin(ra) * radius;
+                endX = 17 - Math.Cos(ra) * radius;
+                endY = 17 + radius - Math.Sin(ra) * radius;
             }
             else
             {
-                isLagreCircle = true; //优势弧
-                endLeft = leftStart - 0.001; //不与起点在同一点，避免重叠绘制出非环形
-                endTop = topStart;
+                isLagreCircle = true; // major arc
+                endX = 17 - 0.001; // avoid overlapping with start point to prevent non-circular drawing
+                endY = 17;
             }
 
-            Point arcEndPt = new Point(endLeft, endTop); //结束点
+            Point arcEndPt = new Point(endX, endY); // end point
             Size arcSize = new Size(radius, radius);
-            SweepDirection direction = SweepDirection.Clockwise; //顺时针弧形
-            //弧形
+            SweepDirection direction = SweepDirection.Clockwise; // clockwise arc
+            // arc
             ArcSegment arcsegment = new ArcSegment(arcEndPt, arcSize, 0, isLagreCircle, direction, true);
 
-            //形状集合
+            // shape collection
             PathSegmentCollection pathsegmentCollection = new PathSegmentCollection();
             pathsegmentCollection.Add(arcsegment);
 
-            //路径描述
+            // path description
             PathFigure pathFigure = new PathFigure();
-            pathFigure.StartPoint = new Point(leftStart, topStart); //起始地址
+            pathFigure.StartPoint = new Point(startX, startY); // start point
             pathFigure.Segments = pathsegmentCollection;
 
-            //路径描述集合
+            // path description collection
             PathFigureCollection pathFigureCollection = new PathFigureCollection();
             pathFigureCollection.Add(pathFigure);
 
-            //复杂形状
+            // complex shape
             PathGeometry pathGeometry = new PathGeometry();
             pathGeometry.Figures = pathFigureCollection;
 
-            //Data赋值
+            //Data assignment
             myCycleProcessBar.Data = pathGeometry;
-            //达到100%则闭合整个
+            // reach 100% then close the whole
             if (angel == 360)
             {
                 myCycleProcessBar.Data = Geometry.Parse(myCycleProcessBar.Data.ToString() + " z");
